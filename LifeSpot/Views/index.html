@@ -5,6 +5,32 @@
     <title>LifeSpot</title>
     <!--Подключение стилей по относительному пути из внешнего файла-->
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../Static/JS/index.js"></script>
+    <script>// Проверка на возраст
+    // checkAge();
+    timeOut()
+    // сохранение сессии
+    handleSession()
+    // вывод данных сессии в консоль
+    sessionLog();
+    // функция для получения пользовательского ввода    
+    const inputParseFunction = function(){
+        return document.getElementsByTagName('input')[0].value.toLowerCase();
+    }</script>
+    <!--<script type="text/javascript" defer src="../Static/JS/testing.js"></script>
+    <script>
+        let userName = prompt("Пожалуйста, введите ваше имя");
+        let age = prompt("Пожалуйста, введите ваш возраст");
+        if(age >= 18) 
+        {
+            alert(`Приветствуем на LifeSpot, ${userName}. В вашем имени ${userName.length} символов` + new Date().toLocaleString());
+        }
+        else 
+        {
+            alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенапралены");
+            window.location.href = "http://www.google.com"
+        }
+    </script>!-->
 </head>
 <body>
         <div class ="bordered">
@@ -17,7 +43,15 @@
             <a href="https://www.youtube.com/watch?v=srlpC5tmhYs"><button>Нью-Йорк</button></a>
             <a href="https://www.youtube.com/watch?v=JplMzss6_YE&ab_channel=WokiliWanders"><button>Лондон</button></a>!-->
             <form action="">
-                <p><input type="search" size="40" class="search" /></p>
+                <!--<input type="search" size="40" class="search" />!-->
+                <p><input type="text" oninput="
+                // Функция объявлена через declaration     
+                const inputParseFunction = function(){
+                return document.getElementsByTagName('input')[0].value.toLowerCase();
+                }
+                // Вызов (функция в аргумент передаётся без круглых скобок)
+                filterContent( inputParseFunction )
+                " size=50%></p>
             </form>
             <div class ="video-container">
             <!--Нью-Йорк-->
@@ -38,7 +72,7 @@
         <aside id="sidebar">
             <div class="navbar">
                 <a href="/"><p>Все трансляции</p></a>
-                <a href="/"><p>О проекте</p></a>
+                <a href="/about"><p>О проекте</p></a>
             </div>
         </aside>
         <footer>
